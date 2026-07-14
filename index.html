@@ -8,19 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ===== RESET Y BASE ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background-color: #0b0b0b;
       background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(60, 60, 60, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(60, 60, 60, 0.15) 0%, transparent 60%),
-        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.01) 0px, rgba(255, 255, 255, 0.01) 2px,
-          rgba(255, 255, 255, 0.02) 2px, rgba(255, 255, 255, 0.02) 4px);
+        radial-gradient(ellipse at 20% 50%, rgba(60,60,60,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(60,60,60,0.15) 0%, transparent 60%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 2px,
+          rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -30,17 +26,15 @@
       padding: 20px;
     }
 
-    /* ===== CONTENEDOR PRINCIPAL ===== */
     .container {
       max-width: 1200px;
       width: 100%;
-      background: rgba(18, 18, 18, 0.85);
+      background: rgba(18,18,18,0.85);
       backdrop-filter: blur(2px);
       border-radius: 32px;
       padding: 30px 40px 40px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      transition: all 0.2s;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.04);
     }
 
     /* ===== HEADER ===== */
@@ -49,26 +43,21 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       padding-bottom: 16px;
       flex-wrap: wrap;
       gap: 15px;
     }
-
-    .header-left {
-      flex: 1;
-    }
-
+    .header-left { flex: 1; }
     .header-left h2 {
       font-family: 'Cinzel', serif;
       font-weight: 700;
       font-size: 1.2rem;
       letter-spacing: 1.5px;
       color: #f0ebe6;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
       margin-bottom: 2px;
     }
-
     .header-left p {
       font-weight: 300;
       font-size: 0.95rem;
@@ -76,20 +65,11 @@
       color: #b5ada8;
       margin: 2px 0;
     }
-
-    .header-left p:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .header-right {
-      flex-shrink: 0;
-      margin-left: 20px;
-    }
-
+    .header-right { flex-shrink: 0; margin-left: 20px; }
     .header-right img {
       max-height: 70px;
       width: auto;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
       border-radius: 6px;
     }
 
@@ -101,13 +81,12 @@
       letter-spacing: 4px;
       text-align: center;
       color: #f5f0eb;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 215, 150, 0.1);
+      text-shadow: 0 4px 12px rgba(0,0,0,0.7), 0 1px 0 rgba(255,215,150,0.1);
       margin: 10px 0 28px;
       padding-bottom: 10px;
-      border-bottom: 2px solid rgba(255, 215, 150, 0.15);
+      border-bottom: 2px solid rgba(255,215,150,0.15);
       position: relative;
     }
-
     .main-title::after {
       content: '';
       position: absolute;
@@ -124,73 +103,96 @@
       position: relative;
       min-height: 380px;
       margin: 10px 0 30px;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0,0,0,0.2);
       border-radius: 18px;
       padding: 20px 25px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: inset 0 8px 20px rgba(0,0,0,0.4);
     }
 
-    .page-content {
-      display: none;
-      animation: fadeIn 0.35s ease-in-out;
-    }
-
-    .page-content.active {
-      display: block;
-    }
+    .page-content { display: none; animation: fadeIn 0.35s ease-in-out; }
+    .page-content.active { display: block; }
 
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(12px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* Estilos para el contenido de cada página (el usuario editará aquí) */
-    .page-content h3 {
+    /* ===== ESTILO DE LAS FICHAS TÉCNICAS ===== */
+    .mineral-card {
+      background: rgba(255,255,255,0.02);
+      border-radius: 14px;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+      margin-top: 10px;
+    }
+    .mineral-card h3 {
       font-family: 'Cinzel', serif;
       font-weight: 700;
       font-size: 1.6rem;
       color: #e0d6cc;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       letter-spacing: 1px;
+      border-bottom: 1px solid rgba(255,215,150,0.2);
+      padding-bottom: 6px;
     }
-
-    .page-content p {
-      font-weight: 300;
-      line-height: 1.7;
-      font-size: 1.05rem;
-      color: #cdc6bf;
-      margin-bottom: 16px;
+    .mineral-card .codigo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: #b89b7a;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
     }
-
-    .page-content .image-placeholder {
+    .mineral-table {
       width: 100%;
-      max-height: 300px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px dashed rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .mineral-table tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .mineral-table tr:last-child { border-bottom: none; }
+    .mineral-table td {
+      padding: 6px 8px;
+      vertical-align: top;
+    }
+    .mineral-table .label {
+      font-weight: 500;
+      color: #b5ada8;
+      width: 28%;
+      letter-spacing: 0.3px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    .mineral-table .value {
+      color: #e8e4de;
+      width: 72%;
+      font-weight: 300;
+    }
+    .mineral-table .value em {
+      color: #b89b7a;
+      font-style: normal;
+    }
+    .foto-placeholder {
+      margin: 12px 0 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px dashed rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
       color: #7a726b;
       font-weight: 300;
-      font-size: 0.95rem;
-      margin: 12px 0 10px;
-      padding: 40px 20px;
-      text-align: center;
-      transition: border 0.2s;
+      font-size: 0.9rem;
     }
-
-    .page-content .image-placeholder:hover {
-      border-color: rgba(255, 215, 150, 0.3);
-    }
-
-    .page-content .image-placeholder img {
+    .foto-placeholder img {
       max-width: 100%;
-      max-height: 280px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      max-height: 220px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
       display: block;
+      margin: 0 auto;
     }
 
     /* ===== NAVEGACIÓN ===== */
@@ -202,12 +204,11 @@
       flex-wrap: wrap;
       margin-top: 6px;
       padding-top: 18px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
-
     .navigation button {
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255,255,255,0.15);
       color: #e0d6cc;
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
@@ -218,93 +219,76 @@
       transition: all 0.25s ease;
       letter-spacing: 0.5px;
       backdrop-filter: blur(2px);
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255,255,255,0.02);
       min-width: 110px;
     }
-
     .navigation button:hover {
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 215, 150, 0.4);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,215,150,0.4);
       color: #fff;
       transform: scale(1.02);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
-
-    .navigation button:active {
-      transform: scale(0.96);
-    }
-
     .navigation button:disabled {
       opacity: 0.3;
       cursor: not-allowed;
       transform: none !important;
       box-shadow: none !important;
-      border-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255,255,255,0.06);
     }
-
     #page-indicator {
       font-family: 'Cinzel', serif;
       font-weight: 400;
       font-size: 1.05rem;
       color: #b8ada4;
       letter-spacing: 1px;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0,0,0,0.3);
       padding: 4px 18px;
       border-radius: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.05);
       min-width: 160px;
       text-align: center;
     }
-
-    .nav-actions {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
+    .nav-actions { display: flex; gap: 12px; align-items: center; }
     #copy-link-btn {
-      background: rgba(255, 215, 150, 0.08);
-      border-color: rgba(255, 215, 150, 0.2);
+      background: rgba(255,215,150,0.08);
+      border-color: rgba(255,215,150,0.2);
       color: #d4c5b5;
       font-size: 0.85rem;
       padding: 8px 18px;
       min-width: auto;
     }
-
     #copy-link-btn:hover {
-      background: rgba(255, 215, 150, 0.15);
-      border-color: rgba(255, 215, 150, 0.4);
+      background: rgba(255,215,150,0.15);
+      border-color: rgba(255,215,150,0.4);
       color: #fff;
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      body { padding: 12px; }
       .container { padding: 20px 18px 30px; }
       .header-left h2 { font-size: 1rem; }
       .header-left p { font-size: 0.8rem; }
       .header-right img { max-height: 50px; }
       .main-title { font-size: 1.4rem; letter-spacing: 2px; }
       .pages-container { padding: 15px; min-height: 280px; }
-      .page-content h3 { font-size: 1.3rem; }
-      .page-content p { font-size: 0.95rem; }
+      .mineral-card h3 { font-size: 1.3rem; }
+      .mineral-table { font-size: 0.85rem; }
+      .mineral-table .label { width: 32%; }
+      .mineral-table .value { width: 68%; }
       .navigation { gap: 12px; }
       .navigation button { padding: 6px 16px; font-size: 0.85rem; min-width: 80px; }
       #page-indicator { font-size: 0.9rem; min-width: 120px; }
       #copy-link-btn { font-size: 0.75rem; padding: 6px 14px; }
     }
-
     @media (max-width: 480px) {
       header { flex-direction: column; align-items: center; text-align: center; }
       .header-right { margin-left: 0; margin-top: 6px; }
       .main-title { font-size: 1.2rem; }
       .pages-container { min-height: 220px; padding: 12px; }
-      .page-content .image-placeholder { padding: 20px 10px; }
       .navigation { flex-direction: column; gap: 8px; }
       .nav-actions { width: 100%; justify-content: center; }
     }
-
-    /* ===== SCROLLBAR ===== */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #1a1a1a; }
     ::-webkit-scrollbar-thumb { background: #4a3f38; border-radius: 10px; }
@@ -323,7 +307,7 @@
       <p>Escuela Profesional de Ingeniería Ambiental</p>
     </div>
     <div class="header-right">
-      <!-- El usuario debe colocar su imagen de logo aquí (reemplazar logo.png) -->
+      <!-- Coloca aquí tu logo (reemplaza logo.png) -->
       <img src="logo.png" alt="Logo Universidad" id="logo">
     </div>
   </header>
@@ -334,207 +318,494 @@
   <!-- ===== CONTENEDOR DE PÁGINAS ===== -->
   <div class="pages-container" id="pagesContainer">
 
-    <!-- Página 1 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 1 · MC-01 JASPE ROJO                                  -->
+    <!-- ============================================================ -->
     <div id="page-1" class="page-content active">
-      <h3>Página 1 · Introducción</h3>
-      <p>Bienvenido al manual interactivo. Aquí se mostrará el contenido de la primera página. El usuario podrá añadir textos, imágenes y la información que desee.</p>
-      <div class="image-placeholder">
-        <span>🪨 <em>Imagen o diagrama</em> (reemplazar este bloque)</span>
+      <div class="mineral-card">
+        <h3>Jaspe Rojo</h3>
+        <div class="codigo">MC-01</div>
+        <!-- Espacio para imagen (opcional) -->
+        <div class="foto-placeholder">
+          <!-- <img src="img/jaspe_rojo.jpg" alt="Jaspe Rojo"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Sedimentario / Hidrotermal por sustitución coloidal</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Brasil, India, Sudáfrica, Madagascar, EE. UU.</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina, granular muy fina, compacta</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con hasta 20% de impurezas (Fe₂O₃)</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Rojo ladrillo, rojo pardo</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Sedimentaria silícea</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Joyería lapidaria, objetos ornamentales y abrasivos menores.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Estudios por DRX evalúan el jaspe como indicador paleoclimático debido al atrapamiento de trazas químicas durante su precipitación sedimentaria.</td></tr>
+        </table>
       </div>
-      <p>Puede editar el contenido de cada página directamente en el HTML. Cada página tiene su propio <code>&lt;div&gt;</code> con clase <code>page-content</code>.</p>
     </div>
 
-    <!-- Página 2 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 2 · MC-02 AMATISTA                                    -->
+    <!-- ============================================================ -->
     <div id="page-2" class="page-content">
-      <h3>Página 2 · Contexto geológico</h3>
-      <p>Descripción de la formación de cuarzos, yacimientos y características generales.</p>
-      <div class="image-placeholder">
-        <span>📷 <em>Imagen de afloramiento o muestra</em></span>
+      <div class="mineral-card">
+        <h3>Amatista</h3>
+        <div class="codigo">MC-02</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/amatista.jpg" alt="Amatista"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Magmático e hidrotermal rellenando geodas</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Brasil (Río Grande del Sur), Uruguay (Artigas), Madagascar, Zambia</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Macrocristalina (cristales prismáticos bien desarrollados)</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con trazas de hierro intersticial e irradiación Gamma</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Violeta, púrpura profundo</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Ígnea (cavidades basálticas)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Alta gemología, joyería de precisión y coleccionismo mineralógico.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Investigaciones espectroscópicas demuestran que el color es inestable a &gt;300‑400 °C, transformándose en citrino.</td></tr>
+        </table>
       </div>
-      <p>Más texto e información relevante para esta sección.</p>
     </div>
 
-    <!-- Página 3 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 3 · MC-03 JASPE VERDE                                 -->
+    <!-- ============================================================ -->
     <div id="page-3" class="page-content">
-      <h3>Página 3 · Metodología de muestreo</h3>
-      <p>Explicación de los procedimientos de campo, herramientas y criterios de selección.</p>
-      <div class="image-placeholder">
-        <span>🔬 <em>Esquema de toma de muestras</em></span>
+      <div class="mineral-card">
+        <h3>Jaspe Verde</h3>
+        <div class="codigo">MC-03</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/jaspe_verde.jpg" alt="Jaspe Verde"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Precipitación hidrotermal de fluidos ricos en sílice</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Alemania, India, Rusia (Montes Urales), Estados Unidos</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina densa</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con inclusiones silicatadas (clorita/actinolita)</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Verde oliva, verde oscuro con vetas</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Sedimentaria / Epitermal</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Objetos ornamentales, lapidaria y revestimientos arquitectónicos.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Usado en análisis petrológicos arqueológicos para trazar rutas comerciales de herramientas de piedra en el neolítico.</td></tr>
+        </table>
       </div>
-      <p>Detalles sobre el protocolo de muestreo.</p>
     </div>
 
-    <!-- Página 4 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 4 · MC-04 CUARZO CRISTAL DE ROCA                      -->
+    <!-- ============================================================ -->
     <div id="page-4" class="page-content">
-      <h3>Página 4 · Equipos y materiales</h3>
-      <p>Listado y descripción de los equipos utilizados para el muestreo y análisis.</p>
-      <div class="image-placeholder">
-        <span>🧰 <em>Fotografía de equipos</em></span>
+      <div class="mineral-card">
+        <h3>Cuarzo Cristal de Roca</h3>
+        <div class="codigo">MC-04</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/cuarzo_cristal.jpg" alt="Cuarzo Cristal de Roca"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Hidrotermal y magmático tardío en pegmatitas</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Minas Gerais (Brasil), Arkansas (EE. UU.), Alpes (Suiza)</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Macrocristalina, euhedral, vítrea</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">Dióxido de silicio puro (SiO₂ ≥ 99.9%)</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Incoloro, completamente transparente</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Ígnea / Metamórfica / Sedimentaria</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Osciladores piezoeléctricos, óptica avanzada, semiconductores.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Su propiedad piezoeléctrica (generación de pulso bajo presión) es la base de los relojes y sensores industriales de vibración.</td></tr>
+        </table>
       </div>
-      <p>Especificaciones técnicas de los instrumentos.</p>
     </div>
 
-    <!-- Página 5 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 5 · MC-05 CALCEDONIA                                  -->
+    <!-- ============================================================ -->
     <div id="page-5" class="page-content">
-      <h3>Página 5 · Registro de datos</h3>
-      <p>Formatos y tablas para el registro de variables en campo.</p>
-      <div class="image-placeholder">
-        <span>📋 <em>Formulario de campo</em></span>
+      <div class="mineral-card">
+        <h3>Calcedonia</h3>
+        <div class="codigo">MC-05</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/calcedonia.jpg" alt="Calcedonia"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Volcánico tardío y sedimentario por aguas freáticas</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Namibia, Turquía, India, Islandia, Brasil</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Micro/criptocristalina fibrosa</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">Mezcla polimórfica de Cuarzo y Moganita (SiO₂)</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Blanco, gris, azul claro, translúcido</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Sedimentaria (nódulos) / Ígnea</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Talla fina de gemas, componentes mecánicos, morteros.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Análisis por TEM revelaron que la calcedonia retiene agua molecular (H₂O) atrapada en los nanoporos de sus fibras.</td></tr>
+        </table>
       </div>
-      <p>Ejemplos de llenado de datos.</p>
     </div>
 
-    <!-- Página 6 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 6 · MC-06 ÁGATA                                       -->
+    <!-- ============================================================ -->
     <div id="page-6" class="page-content">
-      <h3>Página 6 · Análisis de laboratorio</h3>
-      <p>Procedimientos de análisis físico-químicos de las muestras de cuarzo.</p>
-      <div class="image-placeholder">
-        <span>⚗️ <em>Imagen de laboratorio</em></span>
+      <div class="mineral-card">
+        <h3>Ágata</h3>
+        <div class="codigo">MC-06</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/agata.jpg" alt="Ágata"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Relleno por pulsos hidrotermales cíclicos</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Alemania, Uruguay, Sur de Brasil, México</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina bandeada rítmica</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con bandas coloreadas por óxidos metálicos</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Multicromático en bandas concéntricas</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Volcánica (alojada en basaltos)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Morteros de alta resistencia química, baldosas de lujo.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Modelados fisicoquímicos explican su bandeado como autoorganización fractal por difusión no lineal (Anillos de Liesegang).</td></tr>
+        </table>
       </div>
-      <p>Resultados esperados y parámetros medidos.</p>
     </div>
 
-    <!-- Página 7 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 7 · MC-07 CITRINO                                     -->
+    <!-- ============================================================ -->
     <div id="page-7" class="page-content">
-      <h3>Página 7 · Caracterización mineralógica</h3>
-      <p>Descripción de las propiedades ópticas, dureza, densidad y otras características.</p>
-      <div class="image-placeholder">
-        <span>💎 <em>Microfotografía de cristales</em></span>
+      <div class="mineral-card">
+        <h3>Citrino</h3>
+        <div class="codigo">MC-07</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/citrino.jpg" alt="Citrino"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Magmático / Hidrotermal (Extremadamente raro natural)</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Minas Gerais (Brasil), Urales (Rusia), España (Salamanca)</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Macrocristalina hialina</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con hierro incorporado en estado de oxidación específico</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Amarillo claro, dorado, pardo amarillento</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Ígnea (pegmatitas)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Gemología comercial y coleccionismo científico de alto valor.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Más del 95% del citrino comercial mundial proviene del tratamiento térmico industrializado de amatistas de bajo costo.</td></tr>
+        </table>
       </div>
-      <p>Tablas de propiedades.</p>
     </div>
 
-    <!-- Página 8 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 8 · MC-08 CORNALINA                                   -->
+    <!-- ============================================================ -->
     <div id="page-8" class="page-content">
-      <h3>Página 8 · Clasificación de cuarzos</h3>
-      <p>Tipos de cuarzo según su origen, color y inclusiones.</p>
-      <div class="image-placeholder">
-        <span>🌈 <em>Galería de variedades</em></span>
+      <div class="mineral-card">
+        <h3>Cornalina</h3>
+        <div class="codigo">MC-08</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/cornalina.jpg" alt="Cornalina"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Enriquecimiento supergénico y sedimentación de geles</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">India (Guyarat), Brasil, Uruguay, Egipto</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina de fractura concoidea</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con dispersión coloidal de hematita (Fe₂O₃)</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Anaranjado, rojo fuego translúcido</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Sedimentaria (aluviales)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Grabado lapidario histórico (sellos), joyería y cuentas.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">La exposición prolongada al sol intensifica el color rojo debido a la deshidratación de hidróxidos de hierro a hematita.</td></tr>
+        </table>
       </div>
-      <p>Descripción de cada variedad.</p>
     </div>
 
-    <!-- Página 9 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 9 · MC-09 CUARZO ROSADO                               -->
+    <!-- ============================================================ -->
     <div id="page-9" class="page-content">
-      <h3>Página 9 · Aplicaciones industriales</h3>
-      <p>Usos del cuarzo en la industria, tecnología y joyería.</p>
-      <div class="image-placeholder">
-        <span>🏭 <em>Imagen de aplicaciones</em></span>
+      <div class="mineral-card">
+        <h3>Cuarzo Rosado</h3>
+        <div class="codigo">MC-09</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/cuarzo_rosado.jpg" alt="Cuarzo Rosado"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Cristalización magmática masiva tardía</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Madagascar, Brasil (Minas Gerais), EE. UU., Namibia</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Macrocristalina masiva</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con trazas de titanio, manganeso o dumortierita</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Rosa pálido a rosa intenso</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Ígnea (pegmatitas graníticas)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Escultura lapidaria, joyería facetada, tallado ornamental.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Muestras de alta calidad presentan asterismo (estrella de 6 puntas) debido a la difracción sobre nanoagujas de rutilo orientadas.</td></tr>
+        </table>
       </div>
-      <p>Mercado y valor agregado.</p>
     </div>
 
-    <!-- Página 10 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 10 · MC-10 ÁGATA NEGRA                                -->
+    <!-- ============================================================ -->
     <div id="page-10" class="page-content">
-      <h3>Página 10 · Impacto ambiental</h3>
-      <p>Consideraciones ambientales en la extracción y procesamiento del cuarzo.</p>
-      <div class="image-placeholder">
-        <span>🌿 <em>Foto de zona de extracción</em></span>
+      <div class="mineral-card">
+        <h3>Ágata Negra</h3>
+        <div class="codigo">MC-10</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/agata_negra.jpg" alt="Ágata Negra"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Epitermal y volcánico en cavidades gaseosas</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Brasil, Madagascar, México, Estados Unidos</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina compacta</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con trazas densas de óxidos de hierro o carbono</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Negro profundo uniforme</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Volcánica / Sedimentaria</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Artículos de escritorio de lujo, joyería (cameos).</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">La variedad comercial homogénea suele obtenerse tratando ágatas comunes con soluciones azucaradas carbonizadas con ácido.</td></tr>
+        </table>
       </div>
-      <p>Medidas de mitigación.</p>
     </div>
 
-    <!-- Página 11 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 11 · MC-11 ÁGATA DE ENCAJE AZUL                       -->
+    <!-- ============================================================ -->
     <div id="page-11" class="page-content">
-      <h3>Página 11 · Normativa y estándares</h3>
-      <p>Legislación aplicable al muestreo y comercialización de minerales.</p>
-      <div class="image-placeholder">
-        <span>📜 <em>Documentos normativos</em></span>
+      <div class="mineral-card">
+        <h3>Ágata de Encaje Azul</h3>
+        <div class="codigo">MC-11</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/agata_encaje_azul.jpg" alt="Ágata de Encaje Azul"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Hidrotermal de baja temperatura en fracturas</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Namibia (Distrito de Karas), Sudáfrica</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina de bandas micro‑fibrosas</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con trazas de silicatos de hierro/manganeso</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Azul celeste con finas ondas blancas</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Volcánica (basaltos alterados)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Alta joyería lapidaria, gemología de colección.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">El intrincado patrón es un registro fósil de los cambios rítmicos de presión y composición de fluidos magmáticos.</td></tr>
+        </table>
       </div>
-      <p>Referencias legales.</p>
     </div>
 
-    <!-- Página 12 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 12 · MC-12 CUARZO LECHOSO                             -->
+    <!-- ============================================================ -->
     <div id="page-12" class="page-content">
-      <h3>Página 12 · Caso de estudio 1</h3>
-      <p>Ejemplo práctico de un muestreo exitoso en la región.</p>
-      <div class="image-placeholder">
-        <span>📍 <em>Mapa de ubicación</em></span>
+      <div class="mineral-card">
+        <h3>Cuarzo Lechoso</h3>
+        <div class="codigo">MC-12</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/cuarzo_lechoso.jpg" alt="Cuarzo Lechoso"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Magmático y metamórfico en filones alpinos</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Distribución mundial (Perú, Brasil, EE. UU., España)</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Macrocristalina masiva a euhedral</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con inclusiones fluidas microscópicas (H₂O y CO₂)</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Blanco lechoso, opaco</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Ígnea / Metamórfica / Sedimentaria</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Obtención de silicio puro, paneles solares, ferrosilicio.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Al calentarse a &gt;400 °C las burbujas fluidas estallan, permitiendo mapear la termodinámica original del yacimiento.</td></tr>
+        </table>
       </div>
-      <p>Resultados y lecciones aprendidas.</p>
     </div>
 
-    <!-- Página 13 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 13 · MC-13 CRISOPRASA                                 -->
+    <!-- ============================================================ -->
     <div id="page-13" class="page-content">
-      <h3>Página 13 · Caso de estudio 2</h3>
-      <p>Segundo caso práctico con diferentes condiciones geológicas.</p>
-      <div class="image-placeholder">
-        <span>🗺️ <em>Perfil geológico</em></span>
+      <div class="mineral-card">
+        <h3>Crisoprasa</h3>
+        <div class="codigo">MC-13</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/crisoprasa.jpg" alt="Crisoprasa"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Alteración supergénica de rocas ultramáficas</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Queensland (Australia), Polonia, Kazajistán, Brasil</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina granular fina</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con inclusiones de silicato hidratado de níquel</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Verde manzana brillante, translúcido</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Sedimentos de meteorización laterítica</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Talla de gemas de colección, substituto de jade.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Es uno de los raros minerales de la corteza cuyo intenso color verde depende exclusivamente del níquel en solución sólida.</td></tr>
+        </table>
       </div>
-      <p>Análisis comparativo.</p>
     </div>
 
-    <!-- Página 14 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 14 · MC-14 OJO DE TIGRE                               -->
+    <!-- ============================================================ -->
     <div id="page-14" class="page-content">
-      <h3>Página 14 · Interpretación de resultados</h3>
-      <p>Cómo leer e interpretar los datos obtenidos del muestreo.</p>
-      <div class="image-placeholder">
-        <span>📊 <em>Gráficos y tablas</em></span>
+      <div class="mineral-card">
+        <h3>Ojo de Tigre</h3>
+        <div class="codigo">MC-14</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/ojo_tigre.jpg" alt="Ojo de Tigre"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Metamorfismo hidrotermal y reemplazo pseudomórfico</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Sudáfrica (Griqualand), Australia Occidental, India</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina fibrosa (chatoyancia)</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con trazas ordenadas de goethita/limonita</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Bandas sedosas amarillas, doradas y marrones</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Metamórfica (esquistos/cuarcitas)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Gemología ornamental, cabujones y esferas.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Estudios AFM demostraron que no es un reemplazo pasivo, sino un crecimiento sincrónico por fracturas repetidas controladas.</td></tr>
+        </table>
       </div>
-      <p>Conclusiones preliminares.</p>
     </div>
 
-    <!-- Página 15 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 15 · MC-15 ÁGATA PLUMA                                -->
+    <!-- ============================================================ -->
     <div id="page-15" class="page-content">
-      <h3>Página 15 · Control de calidad</h3>
-      <p>Procedimientos para asegurar la fiabilidad de las muestras.</p>
-      <div class="image-placeholder">
-        <span>✅ <em>Checklist de calidad</em></span>
+      <div class="mineral-card">
+        <h3>Ágata Pluma</h3>
+        <div class="codigo">MC-15</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/agata_pluma.jpg" alt="Ágata Pluma"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Sedimentación coloidal en ambientes hidrotermales</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Oregón e Idaho (EE. UU.), México, Indonesia</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Criptocristalina translúcida con dendritas</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con filamentos tridimensionales de MnO₂ o Fe</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">6.5 – 7</td></tr>
+          <tr><td class="label">Color</td><td class="value">Base translúcida con plumas rojas o negras</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Volcánica / Sedimentaria</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Exhibición geológica en láminas, cabujones de colección.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">Las plumas internas son crecimientos dendríticos puramente inorgánicos formados antes del endurecimiento del gel de sílice.</td></tr>
+        </table>
       </div>
-      <p>Protocolos de validación.</p>
     </div>
 
-    <!-- Página 16 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 16 · MC-16 CUARZO AHUMADO                             -->
+    <!-- ============================================================ -->
     <div id="page-16" class="page-content">
-      <h3>Página 16 · Almacenamiento y conservación</h3>
-      <p>Manejo de las muestras después del muestreo.</p>
-      <div class="image-placeholder">
-        <span>📦 <em>Imagen de muestrario</em></span>
+      <div class="mineral-card">
+        <h3>Cuarzo Ahumado</h3>
+        <div class="codigo">MC-16</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/cuarzo_ahumado.jpg" alt="Cuarzo Ahumado"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Magmático tardío expuesto a radiación de la corteza</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Alpes Suizos, Escocia (Cairngorm), Brasil, EE. UU.</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Macrocristalina, vítrea, euhedral</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con trazas de aluminio activadas por radiación</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Gris humo a marrón oscuro o negro morión</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Ígnea (Granitos y pegmatitas)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Óptica especializada, filtros industriales, joyería.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">El color ahumado se borra de manera reversible calentando el cristal a 300 °C, reacomodando los electrones de la red.</td></tr>
+        </table>
       </div>
-      <p>Condiciones óptimas de almacenamiento.</p>
     </div>
 
-    <!-- Página 17 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINA 17 · MC-17 CUARZO AZUL                                -->
+    <!-- ============================================================ -->
     <div id="page-17" class="page-content">
-      <h3>Página 17 · Informe final</h3>
-      <p>Estructura del informe de caracterización.</p>
-      <div class="image-placeholder">
-        <span>📄 <em>Portada de informe</em></span>
+      <div class="mineral-card">
+        <h3>Cuarzo Azul</h3>
+        <div class="codigo">MC-17</div>
+        <div class="foto-placeholder">
+          <!-- <img src="img/cuarzo_azul.jpg" alt="Cuarzo Azul"> -->
+          <span>🪨 <em>Inserta aquí una foto del mineral</em></span>
+        </div>
+        <table class="mineral-table">
+          <tr><td class="label">Origen</td><td class="value">Metamorfismo regional o de contacto de alta T°</td></tr>
+          <tr><td class="label">Distribución geográfica</td><td class="value">Virginia (EE. UU.), Bahía (Brasil), Colombia, Austria</td></tr>
+          <tr><td class="label">Textura</td><td class="value">Macrocristalina masiva granular</td></tr>
+          <tr><td class="label">Composición química</td><td class="value">SiO₂ con nano‑agujas orientadas de dumortierita</td></tr>
+          <tr><td class="label">Dureza</td><td class="value">7 (Patrón)</td></tr>
+          <tr><td class="label">Color</td><td class="value">Azul denim, azul grisáceo</td></tr>
+          <tr><td class="label">Tipo de roca</td><td class="value">Metamórfica (Gneis / Granitos deformados)</td></tr>
+          <tr><td class="label">Clase (Strunz)</td><td class="value">04.DA.05 (Óxidos)</td></tr>
+          <tr><td class="label">Uso</td><td class="value">Piedra ornamental arquitectónica, revestimientos.</td></tr>
+          <tr><td class="label">Otras características</td><td class="value">El color azul es un fenómeno óptico físico (Dispersión de Rayleigh) provocado por las agujas de dumortierita atrapadas.</td></tr>
+        </table>
       </div>
-      <p>Contenido y anexos.</p>
     </div>
 
-    <!-- Página 18 -->
+    <!-- ============================================================ -->
+    <!-- PÁGINAS 18, 19 y 20 (contenido genérico)                     -->
+    <!-- Puedes editar estos textos libremente                        -->
+    <!-- ============================================================ -->
     <div id="page-18" class="page-content">
-      <h3>Página 18 · Recomendaciones</h3>
-      <p>Sugerencias para futuros muestreos y mejoras metodológicas.</p>
-      <div class="image-placeholder">
-        <span>💡 <em>Ideas y mejoras</em></span>
+      <div class="mineral-card">
+        <h3>Página 18 · Bibliografía</h3>
+        <p>Aquí puedes incluir las referencias bibliográficas utilizadas para la elaboración del manual.</p>
+        <ul style="list-style: none; padding: 0; color: #cdc6bf;">
+          <li>• Manual de Mineralogía, Dana (6ª ed.)</li>
+          <li>• Guía de Rocas y Minerales, Smithsonian</li>
+          <li>• Artículos científicos de la Sociedad Geológica del Perú</li>
+        </ul>
+        <div class="foto-placeholder">
+          <span>📚 <em>Agrega aquí imágenes de portadas o gráficos</em></span>
+        </div>
       </div>
-      <p>Lista de recomendaciones.</p>
     </div>
 
-    <!-- Página 19 -->
     <div id="page-19" class="page-content">
-      <h3>Página 19 · Bibliografía</h3>
-      <p>Referencias consultadas para la elaboración del manual.</p>
-      <div class="image-placeholder">
-        <span>📚 <em>Libros y artículos</em></span>
+      <div class="mineral-card">
+        <h3>Página 19 · Anexos</h3>
+        <p>Material complementario: tablas de propiedades físicas, mapas de yacimientos, etc.</p>
+        <div class="foto-placeholder">
+          <span>📎 <em>Inserta aquí tablas o mapas adicionales</em></span>
+        </div>
       </div>
-      <p>Lista de fuentes.</p>
     </div>
 
-    <!-- Página 20 -->
     <div id="page-20" class="page-content">
-      <h3>Página 20 · Anexos y glosario</h3>
-      <p>Términos técnicos, tablas adicionales y material complementario.</p>
-      <div class="image-placeholder">
-        <span>📎 <em>Documentos adjuntos</em></span>
+      <div class="mineral-card">
+        <h3>Página 20 · Glosario</h3>
+        <p>Definiciones de términos técnicos utilizados en el manual.</p>
+        <ul style="list-style: none; padding: 0; color: #cdc6bf;">
+          <li><strong>Criptocristalino:</strong> Textura de grano extremadamente fino, visible solo al microscopio.</li>
+          <li><strong>Chatoyancia:</strong> Efecto óptico de brillo sedoso, como el ojo de gato.</li>
+          <li><strong>Piezoeléctrico:</strong> Capacidad de generar electricidad bajo presión.</li>
+        </ul>
+        <div class="foto-placeholder">
+          <span>📖 <em>Imagen ilustrativa del glosario</em></span>
+        </div>
       </div>
-      <p>Glosario de términos.</p>
     </div>
 
-  </div>
+  </div> <!-- fin pages-container -->
 
   <!-- ===== NAVEGACIÓN ===== -->
   <div class="navigation">
@@ -546,78 +817,54 @@
     </div>
   </div>
 
-</div>
+</div> <!-- fin container -->
 
 <script>
   (function() {
     "use strict";
-
     const TOTAL_PAGES = 20;
     let currentPage = 1;
-
-    // Elementos DOM
     const pages = document.querySelectorAll('.page-content');
     const indicator = document.getElementById('page-indicator');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
-    // ===== FUNCIÓN PARA MOSTRAR PÁGINA =====
     function showPage(pageNumber) {
-      // Validar rango
       if (pageNumber < 1) pageNumber = 1;
       if (pageNumber > TOTAL_PAGES) pageNumber = TOTAL_PAGES;
-
-      // Ocultar todas
       pages.forEach(p => p.classList.remove('active'));
-
-      // Mostrar la página solicitada
       const target = document.getElementById(`page-${pageNumber}`);
       if (target) {
         target.classList.add('active');
         currentPage = pageNumber;
       } else {
-        // fallback
         document.getElementById('page-1').classList.add('active');
         currentPage = 1;
       }
-
-      // Actualizar indicador
       indicator.textContent = `Página ${currentPage} de ${TOTAL_PAGES}`;
-
-      // Actualizar estado de botones
       prevBtn.disabled = (currentPage === 1);
       nextBtn.disabled = (currentPage === TOTAL_PAGES);
-
-      // Actualizar URL con parámetro page (sin recargar)
       const url = new URL(window.location);
       url.searchParams.set('page', currentPage);
       window.history.pushState({ page: currentPage }, '', url);
-
-      // Guardar en localStorage para persistencia (opcional)
       localStorage.setItem('manualPage', currentPage);
     }
 
-    // ===== CAMBIO DE PÁGINA (desde botones) =====
     window.changePage = function(delta) {
-      const newPage = currentPage + delta;
-      showPage(newPage);
+      showPage(currentPage + delta);
     };
 
-    // ===== COPIAR ENLACE ACTUAL =====
     window.copyCurrentLink = function() {
       const url = new URL(window.location);
       url.searchParams.set('page', currentPage);
       const link = url.toString();
-
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(link).then(() => {
           const btn = document.getElementById('copy-link-btn');
           const originalText = btn.textContent;
           btn.textContent = '✅ ¡Copiado!';
           setTimeout(() => { btn.textContent = originalText; }, 2500);
-        }).catch(() => {
-          fallbackCopy(link);
-        });
+        }).catch(() => fallbackCopy(link));
       } else {
         fallbackCopy(link);
       }
@@ -642,12 +889,10 @@
       document.body.removeChild(textarea);
     }
 
-    // ===== LEER PARÁMETRO DE URL AL CARGAR =====
     function loadPageFromURL() {
       const params = new URLSearchParams(window.location.search);
       let pageParam = parseInt(params.get('page'), 10);
       if (isNaN(pageParam) || pageParam < 1 || pageParam > TOTAL_PAGES) {
-        // Intentar recuperar de localStorage
         const saved = parseInt(localStorage.getItem('manualPage'), 10);
         if (!isNaN(saved) && saved >= 1 && saved <= TOTAL_PAGES) {
           pageParam = saved;
@@ -658,19 +903,15 @@
       showPage(pageParam);
     }
 
-    // ===== MANEJAR EVENTO POPSTATE (botón atrás/adelante) =====
     window.addEventListener('popstate', function(event) {
       if (event.state && event.state.page) {
         showPage(event.state.page);
       } else {
-        // Si no hay estado, leer de URL
         loadPageFromURL();
       }
     });
 
-    // ===== INICIALIZAR =====
     loadPageFromURL();
-
   })();
 </script>
 
